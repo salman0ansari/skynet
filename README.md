@@ -34,11 +34,11 @@ Edit the values in `config.json`.
 ```cmd
 > npm start
 ```
-# Thanks to
-* [`open-wa/wa-automate-nodejs`](https://github.com/open-wa/wa-automate-nodejs)
-* [`TopRqL`](https://github.com/salman0ansari/whatsapp-bot)
 
-
-## Contributing
+# Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Thanks to
+* [`open-wa/wa-automate-nodejs`](https://github.com/open-wa/wa-automate-nodejs)
+* [`TopRqL`](https://github.com/salman0ansari/whatsapp-bot)
