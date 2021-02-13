@@ -20,7 +20,7 @@ Edit the values in `config.json`.
 {
     "uaOverride": "useragent",
     "instaAPI": "api-key",
-    "weatherAPI": "api-key"
+    "weatherAPI": "api-key",
     "redditAPI": "api-key"
 }
 ```
