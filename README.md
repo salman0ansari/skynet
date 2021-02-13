@@ -31,7 +31,6 @@ Edit the values in `config.json`.
 ```
 
 ## 🆗 Running the bot
-Regular node:
 ```cmd
 > npm start
 ```
