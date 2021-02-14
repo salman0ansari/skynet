@@ -1,1 +1,6 @@
-
+{
+    "uaOverride": "useragent",
+    "instaAPI": "api-key",
+    "weatherAPI": "api-key",
+    "redditAPI": "api-key"
+}
