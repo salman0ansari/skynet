@@ -22,6 +22,9 @@ try {
 const { Low, JSONFile } = low
 const mongoDB = require('./lib/mongoDB')
 
+// TG 2 Wa
+
+
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 // global.Fn = function functionCallBack(fn, ...args) { return fn.call(global.conn, ...args) }
@@ -70,10 +73,73 @@ const { state, saveState } = useSingleFileAuthState(global.authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
+  // logger: P({ level: 'silent' })
   logger: P({ level: 'debug' })
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
+/// tg2wa
+const { Api, TelegramClient } = require("telegram");
+const { StringSession } = require("telegram/sessions");
+const { NewMessage } = require('telegram/events')
+ /// tg 2 wa
+    const stringSession = new StringSession('1BQANOTEuMTA4LjU2LjE0NwG7QsSoi/LVxephNAWrbyfajolZQltyvhIADJLWublop8xDxSXDLfoa5uoTuNz87KVhwumWlGv5Z8wXltEcCsacqdO0oC+s49Wajf9mZt2hIukpLd0EBYSKgbB34X/2y43kdZUo+759x3mmPMMuJOe7c9vVXSYBVe3yxueC7EnDbLehBnSzcc5bqSrjssB6PUhrtxh0HWV91GkiqGpiIjqFswX7h731lVgeY+niE6U7JgdQe1FxDJul3/RlSU8GC7Ww4ifdHcaoJjrKWKZO0paDRuqsW5AyWw3RZ2vDZeF1Pva7xvgl6VFyiTHGF9s860Vq+KIoqm0jBWMuFGxLk4UXIA==') // apex session
+    const apiId = 1536563;
+    const apiHash = '1e61919db0d801c872fcf5dd848ff2d5';
+    
+    let chnlId = -1001428764681n; // ICS TRADES
+    let groupId = "120363039432501935@g.us"; // ICS TRADES
+    // let chnlId = -1001737879495n; // Testting
+    // let groupId = "120363039765101396@g.us"; // Test 
+
+    (async () => {
+        const client = new TelegramClient(stringSession, apiId, apiHash, {
+            connectionRetries: 5,
+        });
+        await client.start();
+        client.session.save();
+        console.log("connected to tg server");
+        client.getMe()
+        client.addEventHandler(async (event) => {
+          if (event.message.chatId.value === chnlId) {
+            if (event.message.poll) {
+              return console.log("Fucking Polll");
+          }
+          //send photo
+          else if (event.message.photo) {
+              // let fileName = './temp/' + event.message.date + ".jpg";
+              let buffer = await client.downloadMedia(event.message.photo, {
+                  workers: 1,
+              });
+              await global.conn.sendFile(groupId, buffer, "", event.message.text)
+              return "sended photo"
+          }
+          //send video
+          else if (event.message.video) {
+            let buffer = await client.downloadMedia(event.message.media, {
+              workers: 1,
+          });
+          await global.conn.sendFile(groupId, buffer, "", event.message.text , 0, { thumbnail: Buffer.alloc(0) })
+          return "sended video"
+          }
+        //send gif
+          else if( event.message.gif) {
+            let buffer = await client.downloadMedia(event.message.media, {
+              workers: 1,
+          });
+          await global.conn.sendFile(groupId, buffer, "", event.message.text , 0, { thumbnail: Buffer.alloc(0) })
+            return "sended gif"
+          }
+          //send text
+          else if (event.message.text); {
+              await global.conn.reply(groupId, event.message.text)
+              return "sended text"
+            }
+          }
+        }, new NewMessage({incoming : true}));
+    })();
+// conn.reply("918860114592@s.whatsapp.net", "text 'oh hello there" )
+////// 
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
@@ -91,6 +157,9 @@ async function connectionUpdate(update) {
   if (global.db.data == null) await loadDatabase()
   console.log(JSON.stringify(update, null, 4))
 }
+
+//TG to WA
+
 
 
 process.on('uncaughtException', console.error)
@@ -138,6 +207,8 @@ global.reloadHandler = function (restatConn) {
   conn.ev.on('message.delete', conn.onDelete)
   conn.ev.on('connection.update', conn.connectionUpdate)
   conn.ev.on('creds.update', conn.credsUpdate)
+
+  // conn.reply("", "WORKING")
   isInit = false
   return true
 }

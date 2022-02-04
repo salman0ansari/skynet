@@ -56,6 +56,6 @@ Mohd Salman Ansari ⟠:
 }
 handler.help = ['tqto']
 handler.tags = ['info']
-handler.command = /^(credits|credit|thanks|thanksto|tqto)$/i
+handler.command = /^(credits|credit|tqto)$/i
 
 module.exports = handler

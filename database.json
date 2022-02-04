@@ -1,7 +1,7 @@
 {
   "users": {
     "918860114592@s.whatsapp.net": {
-      "exp": 2247,
+      "exp": 3091,
       "limit": 10,
       "lastclaim": 0,
       "registered": false,
@@ -9203,16 +9203,16 @@
   },
   "stats": {
     "crypto.js": {
-      "total": 57,
-      "success": 46,
-      "last": 1643915695058,
-      "lastSuccess": 1643915695058
+      "total": 92,
+      "success": 77,
+      "last": 1643985042462,
+      "lastSuccess": 1643985042462
     },
     "menu.js": {
-      "total": 22,
-      "success": 22,
-      "last": 1643890976689,
-      "lastSuccess": 1643890976689
+      "total": 23,
+      "success": 23,
+      "last": 1643984121028,
+      "lastSuccess": 1643984121028
     },
     "enable.js": {
       "total": 7,
@@ -9251,10 +9251,10 @@
       "lastSuccess": 1643717583492
     },
     "kalkulator.js": {
-      "total": 7,
-      "success": 7,
-      "last": 1643914965830,
-      "lastSuccess": 1643914965830
+      "total": 8,
+      "success": 8,
+      "last": 1643970813196,
+      "lastSuccess": 1643970813196
     },
     "covid.js": {
       "total": 3,

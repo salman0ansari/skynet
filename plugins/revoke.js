@@ -4,7 +4,7 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['revoke']
 handler.tags = ['group']
-handler.command = /^re(voke|new)(invite|link)?$/i
+handler.command = /^(revoke)$/i
 handler.group = true
 
 handler.admin = true

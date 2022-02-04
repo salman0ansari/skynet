@@ -8,7 +8,6 @@ handler.help = ['delete']
 handler.tags = ['main']
 
 handler.command = /^del|delete|unsend?$/i
-handler.register = false
 handler.owner = true
 
 module.exports = handler

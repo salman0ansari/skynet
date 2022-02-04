@@ -10,7 +10,7 @@ let tags = {
   'sticker': 'MENU CONVERT',
   'internet': 'INTERNET',
   'anime': 'MENU ANIME',
-  'downloader': 'DOWNLOADER',
+  // 'downloader': 'DOWNLOADER',
   'nsfw': 'MENU NSFW',
   'tools': 'MENU TOOLS',
   'info': 'MENU INFO',

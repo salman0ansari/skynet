@@ -48,8 +48,5 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['delete *9199xxxxxxx*']
 handler.tags = ['owner']
 handler.command = /^delete$/i
-handler.admin = false
 handler.owner = true
-handler.group = false
-handler.botAdmin = false
 module.exports = handler
