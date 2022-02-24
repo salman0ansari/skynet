@@ -74,7 +74,9 @@ const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   // logger: P({ level: 'silent' })
-  logger: P({ level: 'debug' })
+  logger: P({ level: 'debug' }),
+ // fix error 405
+version:[2,2204,13]
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
@@ -88,7 +90,7 @@ const { NewMessage } = require('telegram/events')
     const apiHash = '1e61919db0d801c872fcf5dd848ff2d5';
     
     let chnlId = -1001428764681n; // ICS TRADES
-    let groupId = "120363039432501935@g.us"; // ICS TRADES
+    let groupId = "120363022063508060@g.us"; // ICS TRADES
     // let chnlId = -1001737879495n; // Testting
     // let groupId = "120363039765101396@g.us"; // Test 
 
