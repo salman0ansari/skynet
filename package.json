@@ -1,0 +1,12 @@
+{
+  "name": "wabot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@adiwajshing/baileys": "^4.4.0",
+    "knex": "^2.3.0",
+    "pg": "^8.8.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
