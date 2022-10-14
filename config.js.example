@@ -1,0 +1,12 @@
+export const config = {
+    // remove .example from this file name
+    "prefix" : "!", // prefix for commands
+    "owner" : [
+        // add your number here
+        // you can add multiple numbers
+        "123456@s.whatsapp.net", 
+        "98765@s.whatsapp.net"
+    ],
+    "botname" : "skynet", // bot name
+    "footer": "skynet • MSA" // footer for templates messages
+}
